@@ -1,7 +1,8 @@
-pyart<=2.1.0
+pyart==0.2.3
 matplotlib==3.10.6
 metpy==1.7.1
 cartopy==0.25.0
 Pillow==11.3.0
 requests==2.32.5
 beautifulsoup4==4.13.4
+imageio==2.31.1
