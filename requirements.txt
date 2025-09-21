@@ -1,6 +1,4 @@
-# Install latest Py-ART from GitHub
-git+https://github.com/ARM-DOE/pyart.git@main#egg=pyart
-
+pyart==1.19.3
 matplotlib==3.10.6
 metpy==1.7.1
 cartopy==0.25.0
