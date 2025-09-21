@@ -1,4 +1,4 @@
-pyart==2.1.0
+pyart<=2.1.0
 matplotlib==3.10.6
 metpy==1.7.1
 cartopy==0.25.0
