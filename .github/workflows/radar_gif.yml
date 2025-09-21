@@ -1,7 +1,7 @@
 name: Generate Radar GIF
 
 on:
-  workflow_dispatch:
+  workflow_dispatch:   # can also schedule if desired
 
 jobs:
   build:
@@ -30,15 +30,17 @@ jobs:
         run: |
           UTC_DATE=$(date -u +"%Y_%m_%d")
           echo "UTC_DATE=$UTC_DATE" >> $GITHUB_ENV
-          echo "UTC_DATE=$UTC_DATE"
+          echo "Current UTC date: $UTC_DATE"
+
+      - name: Ensure output folder exists
+        run: mkdir -p nexrad
 
       - name: Run radar script
         run: |
-          mkdir -p nexrad
           python radar_script.py $UTC_DATE
-          
+
       - name: Upload GIF artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: radar-gif
           path: MOB_N0B_${{ env.UTC_DATE }}*.gif
